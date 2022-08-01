@@ -1,4 +1,3 @@
-"""
 from fastapi import FastAPI
 import pytest
 
@@ -17,4 +16,3 @@ def client(app: FastAPI) -> FastAPI:
 
     client = TestClient(app)
     return client
-"""

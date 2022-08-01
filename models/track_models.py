@@ -13,4 +13,4 @@ class Track(Base):
     Composer = Column(String)
     Milliseconds = Column(Integer)
     Bytes = Column(Integer)
-    UnitPrice = Column(Numeric)
+    UnitPrice = Column(String) # Se usa String porque pytest lanza una advertencia sobre la conversión errónes de decimales

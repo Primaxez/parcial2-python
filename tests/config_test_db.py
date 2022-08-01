@@ -1,11 +1,10 @@
-"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from config_db import Base
 
 # Creamos una instacia de Engine
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db" 
+SQLALCHEMY_DATABASE_URL = "sqlite:///./chinook.db" 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 # este argumento: connect_args={"check_same_thread": False} es usado sólo en base de datos SQLite
 
@@ -14,4 +13,3 @@ TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engin
 
 # Creamos una instancia de DeclarativeMeta
 Base.metadata.create_all(bind=engine)
-"""

@@ -2,7 +2,7 @@ from config_db import SessionLocal
 from repositories.album_repository import AlbumRepo
 from repositories.artist_repository import ArtistRepo
 from repositories.track_repository import TrackRepo
-#from tests.config_test_db import TestingSessionLocal
+from tests.config_test_db import TestingSessionLocal
 
 # función helper para obtener una session de la bd
 def get_db():
@@ -21,7 +21,6 @@ def get_artist_repo():
 def get_track_repo():
     return TrackRepo()
 
-"""
 # nuestra instancia de db para pruebas
 def override_get_db():
     db = TestingSessionLocal()
@@ -29,4 +28,3 @@ def override_get_db():
         yield db
     finally:
         db.close()
-"""

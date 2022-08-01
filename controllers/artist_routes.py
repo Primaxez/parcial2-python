@@ -17,7 +17,8 @@ router = APIRouter(
 
 @router.get("s/",
     response_model=List[ArtistInDB],
-    status_code=status.HTTP_200_OK)
+    status_code=status.HTTP_200_OK,
+    name="artists:get-all-artists")
 # obtener todos los artistas
 async def get_all_artists(
     db: Session = Depends(get_db),
@@ -30,7 +31,8 @@ async def get_all_artists(
 
 @router.get("s/{id}/",
     response_model=List[AlbumInDB],
-    status_code=status.HTTP_200_OK)
+    status_code=status.HTTP_200_OK,
+    name="artists:get-albums-by-artist-id")
 # obtener los albums de un artista
 async def get_albums_by_artist_id(
     id: int,
@@ -44,7 +46,8 @@ async def get_albums_by_artist_id(
 
 @router.get("/{id}/",
     response_model=List[TrackInDB],
-    status_code=status.HTTP_200_OK)
+    status_code=status.HTTP_200_OK,
+    name="artists:get-tracks-by-artist-id")
 # obtener los tracks de un artista
 async def get_tracks_by_artist_id(
     id: int,

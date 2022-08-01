@@ -14,7 +14,8 @@ router = APIRouter(
 
 @router.get("/{id}/",
     response_model=TrackInDB,
-    status_code=status.HTTP_200_OK)
+    status_code=status.HTTP_200_OK,
+    name="tracks:get-track-by-id")
 # obtener un track
 async def get_track(
     id: int,
